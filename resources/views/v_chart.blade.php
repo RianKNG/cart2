@@ -10,7 +10,6 @@
 </head>
 <body>
     <nav class="navbar navbar-light bg-warning">
-       <!--  <h5 class="navbar-brand"><a href="#"><img src="assets/img/a.PNG" class="img-fluid animated" alt="" width='30' height='50'>         GRAFIK KUBIKASI TOMO PASEH CIMANGGUNG</a></h5> -->
        <a class="navbar-brand" href="#"> <img src="assets/img/a.PNG" class="img-fluid animated" alt="" width='30' height='50'>  <b>Grafik Kubikasi Perumdam Sumedang</b></a> 
 
         <a class="navbar-brand" href="/humas"> <img src="asset/a.jpg" class="card-img-top" alt=""><b>Profil Humas VDPR</b></a> 
@@ -34,63 +33,70 @@
           </div>
         </div>
     </div>
+    <div class="row">
      <div class="col-sm-6">
           <div class="card-body">
-                <table class="table table-bordered">                  
-                    <thead class="thead-dark">
+                <table class="table table-bordered bg-primary text-white text-center p-3">               
+                    <thead class="bg-info">
                       <tr>
+                        <tr>
+                            <th colspan="15">Rekap Jumlah SL pada tiap Bulan || Cimanggung || Tomo || Paseh</th>
+                        </tr>
                         <th scope="col">NO</th>
-                        <th scope="col">No Rekening</th>
-                        <th scope="col">Nama Pelanggan</th>
-                        <th scope="col">Alamat</th>
-                        <th scope="col">Kode Gol</th>
-                        <th scope="col">Stand Awal</th>
-                        <th scope="col">Stand Akhir</th>
-                        <th scope="col">Pakai</th>
-                        <th scope="col">Harga Air</th>
-                        <th scope="col">Beban Tetap</th>
-                        <th scope="col">Materai</th>
-                        <th scope="col">Total Rekening</th>
                         <th scope="col">Cabang</th>
-                        <th scope="col">bulan</th>
-                        <th scope="col">tahun</th>
+                        <th scope="col">Januari</th>
+                        <th scope="col">Februari</th>
+                        <th scope="col">Maret</th>
+                        <th scope="col">April</th>
+                        <th scope="col">Mei</th>
+                        <th scope="col">Juni</th>
+                        <th scope="col">Juli</th>
+                        <th scope="col">Agutus</th>
+                        <th scope="col">September</th>
+                        <th scope="col">Oktober</th>
+                        <th scope="col">Nopember</th>
+                        <th scope="col">Desember</th>
+                        <th scope="col">Keterangan</th>
+
+                       
                       </tr>
                     </thead>
                         
 
-                    @php
+                   <!--  @php
                     $no=1;
-                     @endphp
+                     @endphp -->
                     <tbody>
-                        @foreach ($x as $data)
-                        <tr>
-                            <td>{{ $no++ }}</td>
-                            <td>{{ $data->no_rekening }}</td>
-                            <td>{{ $data->nama_pelanggan }}</td>
-                            <td>{{ $data->alamat }}</td>
-                            <td>{{ $data->kode_gol }}</td>
-                            <td>{{ $data->stand_awal }}</td>
-                            <td>{{ $data->stand_akhir }}</td>
-                            <td>{{ $data->pakai }}</td>
-                            <td>{{ $data->harga_air }}</td>
-                            <td>{{ $data->beban_tetap }}</td>
-                            <td>{{ $data->materai }}</td>
-                            <td>{{ $data->total_rekening }}</td>
-                            <td>{{ $data->cabang }}</td>
-                            <td>{{ $data->bulan }}</td>
-                            <td>{{ $data->tahun }}</td>
-                        </tr>
-                            
+                        <td>1</td>
+                        <td>Paseh</td>
+                        @foreach ($datap as $data)
+                            <td>{{ $data->cab}}</td> 
                         @endforeach
-                       
+                        <td>-</td>
+                        <td>-</td>
+                        <tr></tr>
+                        <td>2</td>
+                        <td>Tomo</td>
+                        @foreach ($datat as $data)
+                            <td>{{ $data->cab}}</td> 
+                        @endforeach
+                        <td>-</td>
+                        <td>-</td>
+                        <tr></tr>
+                        <td>3</td>
+                        <td>Cimanggung</td>
+                        @foreach ($datac as $data)
+                            <td>{{ $data->cab}}</td> 
+                        @endforeach
+                        <td>-</td>
+                        <td>-</td>
                       </tbody>
-                     
-                    
                   </table>
             </div>
           </div>
         </div>
       </div>
+    </div>
     <!--   <div class="col-auto"> -->
         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
           import Exel
@@ -124,7 +130,7 @@ Highcharts.chart('xxx', {
         type: 'bar'
     },
     title: {
-        text: 'Grafik Garis M3'
+        text: 'Grafik Batang M3'
     },
     subtitle: {
         text: 'Tahun: ' +
@@ -193,7 +199,7 @@ Highcharts.chart('pie', {
         type: 'line'
     },
     title: {
-        text: 'Grafik Batang M3'
+        text: 'Grafik Garis M3'
     },
     subtitle: {
         text: 'Tahun: ' +
